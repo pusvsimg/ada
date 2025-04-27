@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>糖尿病护理标准 | 美国糖尿病协会</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --primary-light: #e6f0fa;
+      --primary-dark: #003d82;
+      --accent-color: #e63946;
+      --text-color: #333333;
+      --text-light: #666666;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      background-color: white;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      margin-left: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-weight: normal;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 0;
+    }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+
+    .card-title i {
+      color: var(--primary-color);
+      margin-right: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: var(--primary-dark);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .chapter-list {
+      list-style: none;
+    }
+
+    .chapter-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+
+    .chapter-item:last-child {
+      border-bottom: none;
+    }
+
+    .chapter-link {
+      display: flex;
+      align-items: flex-start;
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .chapter-link:hover {
+      background-color: var(--primary-light);
+    }
+
+    .chapter-number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      margin-right: 1rem;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .chapter-content {
+      flex: 1;
+    }
+
+    .chapter-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-color);
+    }
+
+    .chapter-description {
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      color: white;
+    }
+
+    .btn-accent {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .btn i {
+      margin-right: 0.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0, 86, 179, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--primary-color);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .logo span {
+        display: none;
+      }
+
+      .page-title {
+        font-size: 1.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">
+          ADA <span>美国糖尿病协会</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">糖尿病护理标准 <span style="color: var(--accent-color);">2025版</span></h1>
+      <p class="page-subtitle">《糖尿病护理标准》包括美国糖尿病协会（ADA）当前的临床实践建议，为医疗专业人员提供糖尿病护理的组成部分、治疗目标和评估工具。</p>
+
+      <div class="btn-group">
+        <a href="https://professional.diabetes.org/standards-of-care" target="_blank" class="btn btn-accent">
+          <i class="fas fa-external-link-alt"></i> 查看完整指南
+        </a>
+        <a href="#chapters" class="btn btn-primary">
+          <i class="fas fa-list-ul"></i> 浏览章节
+        </a>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title"><i class="fas fa-info-circle"></i> 关于糖尿病护理标准</h2>
+        <p>《糖尿病护理标准》（《护理标准》）包括美国糖尿病协会（ADA）当前的临床实践建议，旨在为临床医生、研究人员、政策制定者和其他个人提供糖尿病护理的组成部分、一般治疗目标和评估护理质量的工具。</p>
+        <p style="margin-top: 1rem;">《糖尿病护理标准》中的建议基于对临床糖尿病文献的<strong
+            style="color: var(--primary-color);">广泛审查</strong>，并补充了ADA工作人员和广大医疗界的意见。糖尿病护理标准每年更新一次，如有新的证据或监管变化需要立即纳入，则在线更新更频繁。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title"><i class="fas fa-star"></i> 2025版关键更新</h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem;">
+          <div
+            style="background-color: var(--primary-light); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-dark);">诊断标准更新</h3>
+            <p style="font-size: 0.9rem; color: var(--text-light);">更新了糖尿病诊断标准和筛查建议，包括新的风险评估工具和筛查频率指南。</p>
+          </div>
+
+          <div
+            style="background-color: var(--primary-light); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-dark);">技术使用指导</h3>
+            <p style="font-size: 0.9rem; color: var(--text-light);">新增了关于糖尿病技术使用的指导，包括连续血糖监测和自动胰岛素输注系统。</p>
+          </div>
+
+          <div
+            style="background-color: var(--primary-light); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-dark);">心血管疾病管理</h3>
+            <p style="font-size: 0.9rem; color: var(--text-light);">扩展了心血管疾病风险管理章节，包括新的药物治疗建议和风险评估方法。</p>
+          </div>
+
+          <div
+            style="background-color: var(--primary-light); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-color);">
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-dark);">药物治疗方案</h3>
+            <p style="font-size: 0.9rem; color: var(--text-light);">更新了药物治疗方案和推荐顺序，纳入了最新的临床试验结果和药物安全数据。</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="chapters" class="section-title">章节列表</h2>
+      <div class="card">
+        <ul class="chapter-list">
+          <li class="chapter-item">
+            <a href="chapter1.html" class="chapter-link">
+              <div class="chapter-number">1</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">提高人群护理水平，促进健康</h3>
+                <p class="chapter-description">人口健康策略和社区干预措施</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">2</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">糖尿病的诊断和分类</h3>
+                <p class="chapter-description">诊断标准、分类和筛查建议</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">3</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">预防或延缓糖尿病及相关并发症</h3>
+                <p class="chapter-description">生活方式干预和药物预防策略</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">4</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">全面的医学评估和并发症评估</h3>
+                <p class="chapter-description">初始和随访评估指南</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">5</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">促进积极健康行为和福祉</h3>
+                <p class="chapter-description">行为改变策略和心理健康</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">6</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">血糖目标</h3>
+                <p class="chapter-description">血糖监测和治疗目标</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">7</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">糖尿病技术</h3>
+                <p class="chapter-description">设备选择和使用指南</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">8</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">肥胖和体重管理</h3>
+                <p class="chapter-description">评估和治疗方法</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">9</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">药物治疗方法</h3>
+                <p class="chapter-description">药物选择和治疗策略</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="chapter-item">
+            <a href="https://professional.diabetes.org/standards-of-care" class="chapter-link">
+              <div class="chapter-number">10</div>
+              <div class="chapter-content">
+                <h3 class="chapter-title">心血管疾病和风险管理</h3>
+                <p class="chapter-description">预防和治疗策略</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="btn-group" style="justify-content: center;">
+          <a href="https://professional.diabetes.org/standards-of-care#overview" target="_blank"
+            class="btn btn-primary">
+            <i class="fas fa-book-open"></i> 查看全部17个章节
+          </a>
+        </div>
+      </div>
+
+      <div class="card"
+        style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white;">
+        <h2 class="card-title" style="color: white;"><i class="fas fa-download" style="color: white;"></i> 获取完整的糖尿病护理标准
+        </h2>
+        <p>访问美国糖尿病协会官方网站，下载完整的2025版糖尿病护理标准文档。包含所有章节、参考文献和临床建议。</p>
+
+        <div class="btn-group">
+          <a href="https://professional.diabetes.org/standards-of-care#download" target="_blank" class="btn"
+            style="background-color: white; color: var(--primary-color);">
+            <i class="fas fa-file-pdf"></i> 下载PDF
+          </a>
+          <a href="https://professional.diabetes.org/standards-of-care" target="_blank" class="btn"
+            style="background-color: rgba(255, 255, 255, 0.2); color: white; border: 1px solid white;">
+            <i class="fas fa-external-link-alt"></i> 在线阅读
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--accent-color);">
+        <h2 class="card-title"><i class="fas fa-language"></i> 翻译建议</h2>
+        <p>您可以使用<a href="https://immersivetranslate.com/zh-Hans/" target="_blank"
+            style="font-weight: 600; color: var(--accent-color);">沉浸式翻译</a>来帮助您在访问ADA官方英文网站时获得更准确的中文翻译，特别是利用其支持的先进大模型，有助于理解医学专业内容。
+        </p>
+
+        <div
+          style="display: flex; align-items: center; margin-top: 1rem; padding: 0.75rem; background-color: var(--primary-light); border-radius: var(--radius-md);">
+          <i class="fas fa-lightbulb" style="color: var(--accent-color); font-size: 1.5rem; margin-right: 1rem;"></i>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">
+            沉浸式翻译是一款浏览器扩展，支持多种翻译服务，包括DeepL、谷歌翻译、OpenAI等，能够提供高质量的网页翻译体验，特别适合医学专业内容的理解。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
